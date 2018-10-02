@@ -33,6 +33,7 @@ if (empty($aPlace)) {
     $aFilteredPlaces['display_name'] = $aPlace['langaddress'];
 
     if (isset($aPlace['address'])) {
+        $aFilteredPlaces['fulladdress'] = $aPlace['address']->getAddressDetails();
         $aFilteredPlaces['address'] = $aPlace['address']->getAddressNames();
     }
     if (isset($aPlace['sExtraTags'])) $aFilteredPlaces['extratags'] = $aPlace['sExtraTags'];
